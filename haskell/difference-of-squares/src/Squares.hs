@@ -3,7 +3,7 @@ module Squares (difference, squareOfSum, sumOfSquares) where
 import GHC.Float (powerDouble)
 
 difference :: Integral a => a -> a
-difference n = (-) (squareOfSum n) (sumOfSquares n)
+difference n = squareOfSum n - sumOfSquares n
 
 squareOfSum :: Integral a => a -> a
 squareOfSum n = sum [1 .. n] ^ 2
