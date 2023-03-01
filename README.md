@@ -3,3 +3,4 @@
 ## Week 2
 
 - [Hello World](https://exercism.org/tracks/haskell/exercises/hello-world)
+- [Leap](https://exercism.org/tracks/haskell/exercises/leap)
