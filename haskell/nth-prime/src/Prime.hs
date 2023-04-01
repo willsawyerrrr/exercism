@@ -3,8 +3,11 @@ module Prime (nth) where
 nth :: Int -> Maybe Integer
 nth n
   | n < 1 = Nothing
-  | otherwise = Just $ filter isPrime [2 ..] !! (n - 1)
+  | otherwise = Just $ primes !! (n - 1)
   where
-    isPrime x = primeFactors x == [1, x]
-    primeFactors x = filter (divides x) [1 .. x]
+    primes = [i | i <- [1 ..], isPrime i]
+    isPrime x = divisors x == [1, x]
+    divisors x = [i | i <- [1 .. x], divides x i]
     divides x y = x `mod` y == 0
+
+-- need to implement a sieve to check primality more efficiently
